@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="https://c8.alamy.com/compit/rhwfm6/illustrazione-a-colori-di-un-libro-aperto-semplice-disegno-rhwfm6.jpg" alt="">
+
+<form action="libro" method="POST" name="libro">
+    <input type="text" name="titolo" placeholder="titolo">
+    <input type="text" name="autore" placeholder="autore">
+    <input type="submit" value="Aggiorna" />
+
+    <div th:each="libro : ${libri}">
+        <span th:text="${libro.titolo}"></span>
+        <span th:text="${libro.autore}"></span>
+    </div>
+
+</form>
+</body>
+</html>
