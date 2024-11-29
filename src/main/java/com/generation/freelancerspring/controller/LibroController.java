@@ -30,6 +30,4 @@ public class LibroController
 		model.addAttribute("libri", libri);
 		return "gestoreLibro";
 	}
-
-
 }

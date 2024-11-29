@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EmployerInDetails</title>
+  <link rel="stylesheet" href="/style.css">>
+</head>
+<body>
+<div id="main">
+  <div id="content">
+    <div id="header">
+      <div id="title">
+        <h1>Employer Manager</h1>
+      </div>
+    </div>
+    <div id="index">
+      <ul>
+        <li>
+          <a href="/home"> Home</a>
+        </li>
+        <li>
+          <a href="/employer">Employers</a>
+        </li>
+      </ul>
+    </div>
+    <div id="section1">
+      <div class="sub-section">
+        <div class="image">
+          <img src="/employer.png" height="1024" width="1024"/>
+        </div>
+        <div class="details">
+          <div id="properties">
+            <div id="properties_title">
+              <h3>Generalità</h3>
+            </div>
+            <div>
+              <p class="bold">Name: </p>
+              <span th:text="${employer.name}"></span>
+            </div>
+            <div>
+              <p class="bold">Surname: </p>
+              <span th:text="${employer.address}"></span>
+            </div>
+          </div>
+          <div id="contracts">
+            <div id="cotracts_title">
+              <h3>Contracts</h3>
+            </div>
+            <div th:each="contracts : ${employer.getContracts()}">
+              <div>
+                <div style="display:inline">
+                  <p class="bold">Freelancer <span th:text="${contracts.getFreelancer().getName()}"></span></p>
+                  <span th:text="${contracts.commission}"></span>
+                </div>
+              </div>
+              <div>
+                <p class="bold">Payment:</p>
+                <span th:text="${contracts.payment}"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>

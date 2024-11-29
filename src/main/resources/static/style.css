@@ -1,21 +1,110 @@
 html{
     font-family: "Microsoft Sans Serif";
+    color: #343438;
 }
 
 body{
     background-color: rgb(54, 54, 54);
 }
 
-#main {
+#main{
     display: flex;
     flex-direction: column;
+    background-color: #858585;
     align-items: center;
-    background-color: #d2d2d2;
+    justify-items: center;
+    /*padding: 200px;*/
+    /*height: 100vh;*/
+    /*width: 100vw;*/
 }
 
 #content {
     display: flex;
-    flex-direction: column ;
+    flex-direction: column;
+    justify-items: center;
     align-items: center;
-    min-height: 50vh;
+    background-color: rgb(196, 196, 196);
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow:  black 10px 1px 100px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    /*height: 96vh;*/
+    /*width: 95vw;*/
+}
+
+
+#header {
+    display: inline;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+
+a {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.image{
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    width: 500px;
+    height: 200px;
+    overflow: hidden; /* Nasconde le parti dell'immagine che escono dal contenitore */
+    object-position: center; /* Utile per contenitori con elementi posizionati */
+}
+
+img {
+    /*object-position: center;*/
+
+    /*max-width: 20%; !* La larghezza non supererà il contenitore *!*/
+    /*max-height: 20%; !* L'altezza non supererà il contenitore *!*/
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-items: center;
+}
+
+
+.sub-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*background-color: azure;*/
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.sub-section > div {
+    margin: 10px;
+}
+
+#properties > div {
+    display: inline;
+}
+
+#contracts {
+    margin-top: 10px;
+}
+
+ul > li{
+    display: inline;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+
 }

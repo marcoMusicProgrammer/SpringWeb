@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Freelancer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="main">
+  <div id="content">
+    <div id="header">
+      <div id="title">
+        <h1> Freelancer Manager</h1>
+      </div>
+    </div>
+    <div id="index">
+      <ul>
+        <li>
+          <a href="/home"> Home</a>
+        </li>
+      </ul>
+    </div>
+    <div id="section1">
+      <div class="sub-section">
+        <div class="image">
+          <img src="/freelancer.png" height="1024" width="1024"/>
+        </div>
+        <div th:each="freelancer : ${freelancers}" class="details">
+            <div>
+              <span th:text="${freelancer.name}"></span>
+              <span th:text="${freelancer.surname}"></span>
+              <span th:text="${freelancer.p_iva}"></span>
+              <span th:text="${freelancer.age}"></span>
+              <a th:href="@{freelance/detail(id=${freelancer.id})}"> Mostra Freelancer</a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div id="section2">
+      <div id="sub-section">
+        <div id="sub_title">
+          <h2>Inserimento Freelancer</h2>
+        </div>
+        <div>
+          <form action="freelance" method="POST">
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="surname" placeholder="surname">
+            <input type="text" name="p_iva" placeholder="Partita Iva">
+            <input type="text" name="eta" placeholder="Età">
+            <input type="submit" value="Inserisci">
+          </form>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
