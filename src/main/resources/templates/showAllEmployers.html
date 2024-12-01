@@ -2,12 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><!DOCTYPE html>
-      <html lang="en">
-      <head>
-      <meta charset="UTF-8">
-      <title>Employer</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Employer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="main">
@@ -29,11 +25,23 @@
         <div class="image">
           <img src="/employer.png" height="1024" width="1024"/>
         </div>
-        <div th:each="employer : ${employers}" class="details">
-          <div>
-            <span th:text="${employer.name}"></span>
-            <span th:text="${employer.address}"></span>
-            <a th:href="@{employer/detail(id=${employer.id})}"> Mostra Employer</a>
+        <div class="overlay"></div>
+        <div class="section">
+          <div th:each="employer : ${employers}" >
+            <a th:href="@{employer/detail(id=${employer.id})}">
+              <table class="employers">
+                <tr>
+                  <td>
+                    <span th:text="${employer.name}"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span th:text="${employer.address}"></span>
+                  </td>
+                </tr>
+              </table>
+            </a>
           </div>
         </div>
       </div>
@@ -51,15 +59,10 @@
           </form>
         </div>
       </div>
-
     </div>
   </div>
 </div>
 </div>
-</body>
-</html></title>
-</head>
-<body>
-
+<script src="/employerUi.js" defer></script>
 </body>
 </html>

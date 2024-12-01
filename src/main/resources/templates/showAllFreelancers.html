@@ -25,13 +25,33 @@
         <div class="image">
           <img src="/freelancer.png" height="1024" width="1024"/>
         </div>
-        <div th:each="freelancer : ${freelancers}" class="details">
-            <div>
-              <span th:text="${freelancer.name}"></span>
-              <span th:text="${freelancer.surname}"></span>
-              <span th:text="${freelancer.p_iva}"></span>
-              <span th:text="${freelancer.age}"></span>
-              <a th:href="@{freelance/detail(id=${freelancer.id})}"> Mostra Freelancer</a>
+        <div class="overlay"></div>
+          <div class="section">
+            <div th:each="freelancer : ${freelancers}">
+              <a th:href="@{freelance/detail(id=${freelancer.id})}">
+              <table class="freelancer">
+                <tr>
+                  <td>
+                    <span th:text="${freelancer.name}"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span th:text="${freelancer.surname}"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span th:text="${freelancer.p_iva}"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <span th:text="${freelancer.age}"></span>
+                  </td>
+                </tr>
+              </table>
+              </a>
             </div>
         </div>
       </div>
@@ -51,10 +71,10 @@
           </form>
         </div>
       </div>
-
     </div>
     </div>
   </div>
 </div>
+<script src="/freelancerUi.js" defer></script>
 </body>
 </html>

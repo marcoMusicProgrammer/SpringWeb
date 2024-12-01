@@ -42,17 +42,16 @@ body{
     font-weight: bold;
 }
 
-
 a {
     font-size: 18px;
     color: black;
     text-decoration: none;
 }
 
-a:hover{
-    font-size: 20px;
-    font-weight: bold;
-}
+/*a:hover{*/
+/*    font-size: 20px;*/
+/*    font-weight: bold;*/
+/*}*/
 
 .image{
     /*align-items: center;*/
@@ -64,15 +63,15 @@ a:hover{
 }
 
 img {
-    /*object-position: center;*/
-
-    /*max-width: 20%; !* La larghezza non supererà il contenitore *!*/
-    /*max-height: 20%; !* L'altezza non supererà il contenitore *!*/
+    width: 100%; /* Assicura che l'immagine copra tutta la larghezza del contenitore */
+    height: auto; /* Mantiene le proporzioni dell'immagine */
+    object-fit: cover; /* Ritaglia l'immagine per riempire il contenitore */
+    object-position: 20px -130px; /* Centra l'immagine nel contenitore */
 }
 
 .details{
-    display: flex;
-    flex-direction: column;
+    /*display: flex;*/
+    /*flex-direction: column;*/
     align-items: start;
     justify-items: center;
 }
@@ -106,5 +105,52 @@ ul > li{
     flex-direction: row;
     justify-content: center;
     list-style: none;
+}
 
+.employers,.freelancer {
+    background-color: rgb(190, 190, 190);
+    display: grid;
+    flex-direction: column;
+    border: 1px solid #343438;
+    margin: 10px;
+    box-shadow: black 1px 1px 10px;
+}
+
+.section {
+    position: relative;
+    z-index: 20;
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+    z-index: 10;
+    pointer-events: none;
+    transition: background-color 3s ease;
+}
+
+.overlay.active {
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: all;
+}
+
+table {
+    margin: auto; /* Mantiene la tabella centrata */
+    transition: transform 0.3s ease, width 0.3s ease; /* Aggiunge animazioni */
+    z-index: 20;
+    position: relative;
+    width:100%;
+}
+
+table:hover {
+    transform: scale(1.2); /* Ingrandisce proporzionalmente la tabella */
+    background-color: white;
 }
