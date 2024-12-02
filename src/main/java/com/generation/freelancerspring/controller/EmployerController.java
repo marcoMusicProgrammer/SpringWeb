@@ -21,7 +21,7 @@ public class EmployerController
 	public String inserisciEmployer(@ModelAttribute Employer employer)
 	{
 		repo.save(employer);
-		return "redirect:/freelance";
+		return "redirect:/employer";
 	}
 
 

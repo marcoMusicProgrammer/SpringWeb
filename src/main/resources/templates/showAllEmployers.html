@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Employer</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <div id="main">
-  <div id="content">
+  <div class="content">
     <div id="header">
       <div id="title">
         <h1> Employer Manager</h1>
@@ -53,7 +53,7 @@
         </div>
         <div>
           <form action="employer" method="POST">
-            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="name" placeholder="Name" id="name">
             <input type="text" name="address" placeholder="Address">
             <input type="submit" value="Inserisci">
           </form>
@@ -61,7 +61,6 @@
       </div>
     </div>
   </div>
-</div>
 </div>
 <script src="/employerUi.js" defer></script>
 </body>
