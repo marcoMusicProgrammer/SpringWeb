@@ -1,5 +1,6 @@
 package com.generation.freelancerspring.controller;
 
+import com.generation.freelancerspring.model.entities.Contract;
 import com.generation.freelancerspring.model.entities.Employer;
 import com.generation.freelancerspring.model.entities.Freelancer;
 import com.generation.freelancerspring.model.repositories.EmployerRepository;
@@ -34,10 +35,12 @@ public class EmployerController
 	}
 
 	@GetMapping("/detail")
-	public String employerInDetails(@RequestParam int id, Model model)
+	public String employerInDetails(@RequestParam int id, Model model,Model model2)
 	{
-		Employer employer = repo.findById(id).get();
+		Employer employer = repo.findById(1).get();
 		model.addAttribute("employer", employer);
+		List<Contract> contracts = employer.getContracts();
+ 		model2.addAttribute("contract",contracts);
 		return "employerInDetails";
 	}
 }

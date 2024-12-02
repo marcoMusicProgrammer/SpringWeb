@@ -28,12 +28,12 @@ public class ContractController
 	private FreelancerRepository freelancerRepo;
 
 	@PostMapping
-	public String inserisciContract(@ModelAttribute Contract contract, @RequestParam int id)
+	public String inserisciContract(@ModelAttribute Contract contract, @RequestParam int employerId)
 	{
 		System.out.println(contract);
-		contract.setEmployer(employerRepo.findById(id).get());
+		contract.setEmployer(employerRepo.findById(employerId).get());
 		repoContract.save(contract);
+
 		return "redirect:/employer";
 	}
-
 }

@@ -46,12 +46,10 @@
             <div id="cotracts_title">
               <h3>Contracts</h3>
             </div>
-            <div th:each="contracts : ${employer.getContracts()}">
+            <div th:each="contracts : ${contract}">
               <div>
-                <div style="display:inline">
-                  <p class="bold">Freelancer <span th:text="${contracts.getFreelancer().getName()}"></span></p>
+                  <span th:text="${contracts.getFreelancer()}"></span>
                   <span th:text="${contracts.commission}"></span>
-                </div>
               </div>
               <div>
                 <p class="bold">Payment:</p>
@@ -79,7 +77,7 @@
                 <label>
                   <input type="text" name="payment" placeholder="Payment">
                 </label>
-              <input type="hidden" name="id" th:value="${employer.id}">
+              <input type="hidden" name="employerId" th:value="${employer.id}">
                 <input type="submit" value="Submit">
             </form>
           </div>
